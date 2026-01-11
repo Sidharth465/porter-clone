@@ -4,14 +4,23 @@
   "license": "MIT",
   "scripts": {
     "build": "nx next:build && echo 'Build complete'",
-    "lint": "nx eslint:lint"
+    "lint": "nx eslint:lint",
+    "----------- USER APP -----------": "",
+    "user:android": "nx run userapp:run-android",
+    "user:ios": "nx run userapp:run-ios",
+    "user:clean": "cd apps/userapp/android/ && ./gradlew clean && cd ../../../",
+    "----------- DRIVER APP -----------": "",
+    "driver:android": "nx run driver-app:run-android",
+    "driver:ios": "nx run driver-app:run-ios",
+    "driver:clean": "cd apps/driver-app/android/ && ./gradlew clean && cd ../../../"
   },
   "nx": {},
   "private": true,
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-native": "~0.79.3"
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "react-native": "~0.79.3",
+    "zustand": "^5.0.9"
   },
   "devDependencies": {
     "@babel/core": "^7.14.5",
@@ -60,7 +69,7 @@
     "react-native-svg-transformer": "~1.5.1",
     "react-native-svg-web": "~1.0.9",
     "react-native-web": "~0.20.0",
-    "react-test-renderer": "^19.2.0",
+    "react-test-renderer": "19.0.0",
     "ts-jest": "^29.4.0",
     "ts-node": "10.9.1",
     "tslib": "^2.3.0",
@@ -70,6 +79,9 @@
     "vitest": "^4.0.0"
   },
   "workspaces": [
-    "apps/*"
+    "apps/*",
+    "driver-app",
+    "libs/shared-ui",
+    "libs/*"
   ]
 }

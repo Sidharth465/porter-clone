@@ -1,0 +1,21 @@
+buildscript {
+    ext {
+       buildToolsVersion = findProperty('GLOBAL_BUILD_TOOLS') ?: "35.0.0"
+        minSdkVersion = (findProperty('GLOBAL_MIN_SDK') ?: "24").toInteger()
+        compileSdkVersion = (findProperty('GLOBAL_COMPILE_SDK') ?: "35").toInteger()
+        targetSdkVersion = (findProperty('GLOBAL_TARGET_SDK') ?: "35").toInteger()
+        ndkVersion = findProperty('GLOBAL_NDK_VERSION') ?: "27.1.12297006"
+        kotlinVersion = findProperty('GLOBAL_KOTLIN_VERSION') ?: "2.0.21"
+    }
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath("com.android.tools.build:gradle")
+        classpath("com.facebook.react:react-native-gradle-plugin")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
+    }
+}
+
+apply plugin: "com.facebook.react.rootproject"

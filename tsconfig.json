@@ -4,7 +4,19 @@
   "files": [],
   "references": [
     {
-      "path": "./apps/porter-clone"
+      "path": "./apps/driver-app"
+    },
+    {
+      "path": "./libs/shared-ui"
+    },
+    {
+      "path": "./libs/data-access"
+    },
+    {
+      "path": "./apps/user-app"
+    },
+    {
+      "path": "./apps/userapp"
     }
   ]
 }
